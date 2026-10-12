@@ -8,9 +8,9 @@
   --line: rgba(11, 13, 12, 0.14);
   --line-light: rgba(255, 255, 255, 0.18);
   --acid: #c8f04b;
-  --font-sans: "DM Sans", sans-serif;
-  --font-display: "Manrope", sans-serif;
-  --font-serif: "Newsreader", serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
   --page: min(1380px, calc(100vw - 64px));
   --ease: cubic-bezier(.2, .75, .25, 1);
 }
@@ -24,6 +24,19 @@ button { color: inherit; font: inherit; }
 img, video { display: block; width: 100%; }
 p, h1, h2, h3 { margin: 0; }
 svg { stroke-width: 1.6; }
+i[data-lucide] { width: 1.15em; height: 1.15em; display: inline-grid; place-items: center; flex: 0 0 auto; font-style: normal; line-height: 1; }
+i[data-lucide]::before { font-family: Arial, sans-serif; font-size: 1em; font-weight: 400; }
+i[data-lucide="arrow-up-right"]::before { content: "↗"; }
+i[data-lucide="arrow-down-right"]::before, i[data-lucide="move-down-right"]::before { content: "↘"; }
+i[data-lucide="arrow-right"]::before { content: "→"; }
+i[data-lucide="chevron-right"]::before { content: "›"; }
+i[data-lucide="check"]::before, i[data-lucide="shield-check"]::before { content: "✓"; }
+i[data-lucide="scan-eye"]::before { content: "◉"; }
+i[data-lucide="waypoints"]::before { content: "◇"; }
+i[data-lucide="radio-tower"]::before { content: "⌁"; }
+i[data-lucide="cctv"]::before { content: "◫"; }
+i[data-lucide="cpu"]::before { content: "▦"; }
+i[data-lucide="bell-ring"]::before { content: "◌"; }
 
 .site-header { position: fixed; inset: 0 0 auto; z-index: 100; color: var(--white); transition: background .35s ease, color .35s ease, border-color .35s ease; border-bottom: 1px solid transparent; }
 .site-header.scrolled { color: var(--ink); background: rgba(241, 240, 233, .92); border-color: var(--line); backdrop-filter: blur(16px); }
@@ -94,7 +107,7 @@ svg { stroke-width: 1.6; }
 .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 100px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .capability { min-height: 335px; padding: 36px; display: flex; flex-direction: column; justify-content: space-between; background: var(--paper); transition: background .35s ease; }
 .capability:hover { background: var(--paper-soft); }
-.capability > svg { width: 30px; height: 30px; color: #4d524b; }
+.capability > svg, .capability > i { width: 30px; height: 30px; color: #4d524b; font-size: 1.55rem; }
 .capability-number { display: block; margin-bottom: 18px; }
 .capability h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; letter-spacing: -.04em; }
 .capability p { max-width: 330px; margin-top: 14px; color: #656a62; font-size: .91rem; line-height: 1.65; }
@@ -132,16 +145,16 @@ svg { stroke-width: 1.6; }
 .diagram-stage { min-height: 330px; padding: 56px 35px 44px; display: flex; align-items: center; }
 .diagram-node { width: 142px; flex: 0 0 142px; text-align: center; }
 .node-icon { width: 88px; height: 88px; margin: 0 auto 18px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; }
-.node-icon svg { width: 27px; color: rgba(255,255,255,.72); }
+.node-icon svg, .node-icon i { width: 27px; color: rgba(255,255,255,.72); font-size: 1.35rem; }
 .diagram-node.active .node-icon { border-color: var(--acid); background: var(--acid); box-shadow: 0 0 50px rgba(200,240,75,.12); }
-.diagram-node.active .node-icon svg { color: var(--ink); }
+.diagram-node.active .node-icon svg, .diagram-node.active .node-icon i { color: var(--ink); }
 .diagram-node > span { display: block; font-size: .83rem; }
 .diagram-node small { display: block; margin-top: 4px; color: rgba(255,255,255,.36); font-size: .65rem; }
 .diagram-connector { flex: 1; display: flex; align-items: center; margin: -42px -6px 0; color: rgba(255,255,255,.28); }
 .diagram-connector span { width: 100%; height: 1px; background: rgba(255,255,255,.17); }
 .diagram-connector svg { width: 14px; margin-left: -5px; }
 .privacy-boundary { padding: 18px 22px; display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line-light); color: rgba(255,255,255,.48); font-size: .68rem; letter-spacing: .03em; }
-.privacy-boundary svg { width: 17px; color: var(--acid); }
+.privacy-boundary svg, .privacy-boundary i { width: 17px; color: var(--acid); }
 
 .section-heading.narrow { grid-template-columns: 1fr 2fr; }
 .section-heading.narrow h2 { max-width: 850px; }
@@ -150,7 +163,7 @@ svg { stroke-width: 1.6; }
 .process-item:hover { padding-left: 18px; background: var(--paper-soft); }
 .process-item h3 { font-family: var(--font-display); font-size: 1.45rem; font-weight: 500; letter-spacing: -.035em; }
 .process-item p { margin-top: 9px; color: #666b63; font-size: .9rem; }
-.process-item > svg { width: 21px; color: #70746d; }
+.process-item > svg, .process-item > i { width: 21px; color: #70746d; }
 
 .contact { padding-top: 40px; }
 .contact-panel { min-height: 570px; padding: 34px 40px 44px; display: flex; flex-direction: column; background: var(--acid); }
@@ -170,7 +183,7 @@ svg { stroke-width: 1.6; }
 .footer-links a:hover { border-color: currentColor; }
 .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; border-top: 1px solid var(--line); color: #777b74; font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; }
 
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal { opacity: 1; transform: none; }
 .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } .status-light { animation: none; } }
 
@@ -231,7 +244,7 @@ svg { stroke-width: 1.6; }
   .diagram-connector svg { transform: rotate(90deg); margin: -5px 0 0; }
   .node-icon { width: 72px; height: 72px; margin-bottom: 12px; }
   .process-item { grid-template-columns: 42px 1fr; gap: 14px; padding-right: 0; }
-  .process-item > svg { display: none; }
+  .process-item > svg, .process-item > i { display: none; }
   .contact { padding-top: 20px; }
   .contact-panel { min-height: 570px; padding: 26px 22px 30px; }
   .contact-topline span:last-child { display: none; }
