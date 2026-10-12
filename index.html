@@ -3,934 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EyeSafe — Sovereign Edge Computer Vision & Industrial AI</title>
-  <meta name="description" content="EyeSafe delivers 100% on-premise sovereign computer vision for industrial PPE safety, factory gate truck matriculation, and academic exam integrity at 500 DH/cam/mo. ISO/IEC 42001:2023 aligned.">
-  
-  <!-- Fonts -->
+  <meta name="theme-color" content="#0b0d0c">
+  <title>EyeSafe — Sovereign Computer Vision</title>
+  <meta name="description" content="EyeSafe turns existing camera infrastructure into private, real-time operational intelligence for industry, logistics and education.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Manrope:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-theme">
-  <!-- Scanline / Grid Background Overlay -->
-  <div class="hud-grid-overlay" aria-hidden="true"></div>
-  <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
-  <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
-
-  <!-- Header / Navigation -->
+<body>
   <header class="site-header" id="header">
-    <div class="header-container">
-      <a href="#hero" class="brand-logo" id="brandLogo">
-        <div class="brand-optic-icon">
-          <div class="optic-ring"></div>
-          <div class="optic-reticle"></div>
-          <div class="optic-dot"></div>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Eye<span class="brand-accent">Safe</span></span>
-          <span class="brand-tagline">SOVEREIGN AI</span>
-        </div>
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="EyeSafe home">
+        <svg class="brand-mark" viewBox="0 0 42 24" aria-hidden="true"><path d="M2 12C6.8 4.8 13 1.2 21 1.2S35.2 4.8 40 12c-4.8 7.2-11 10.8-19 10.8S6.8 19.2 2 12Z"/><circle cx="21" cy="12" r="5.2"/></svg>
+        <span>EyeSafe</span>
       </a>
-
-      <nav class="nav-menu" id="navMenu">
-        <a href="#expertise" class="nav-link" data-i18n="nav.expertise">Expertise</a>
-        <a href="#solutions" class="nav-link" data-i18n="nav.solutions">Solutions</a>
-        <a href="#simulator" class="nav-link" data-i18n="nav.simulator">Live Feeds</a>
-        <a href="#sovereign" class="nav-link" data-i18n="nav.sovereignty">Sovereignty</a>
-        <a href="#standards" class="nav-link" data-i18n="nav.standards">ISO Standards</a>
-        <a href="#calculator" class="nav-link" data-i18n="nav.calculator">Pricing & ROI</a>
-        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#expertise" data-en="Expertise" data-fr="Expertise">Expertise</a>
+        <a href="#applications" data-en="Applications" data-fr="Applications">Applications</a>
+        <a href="#architecture" data-en="Architecture" data-fr="Architecture">Architecture</a>
+        <a href="#approach" data-en="Approach" data-fr="Approche">Approach</a>
       </nav>
-
-      <div class="header-actions">
-        <!-- Language Switcher -->
-        <div class="lang-switch-container">
-          <button type="button" class="lang-btn active" id="langEnBtn" onclick="setLanguage('en')">EN</button>
-          <span class="lang-divider">/</span>
-          <button type="button" class="lang-btn" id="langFrBtn" onclick="setLanguage('fr')">FR</button>
+      <div class="nav-actions">
+        <div class="language-switch" aria-label="Language selector">
+          <button class="lang-option active" data-lang-option="en" aria-label="Switch to English">EN</button><span>/</span><button class="lang-option" data-lang-option="fr" aria-label="Passer en français">FR</button>
         </div>
-
-        <a href="#contact" class="btn btn-primary btn-sm btn-pilot" id="requestPilotBtn" data-i18n="nav.requestPilot">
-          <span>Request Pilot</span>
-          <i data-lucide="arrow-up-right"></i>
-        </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <a class="nav-cta" href="#contact"><span data-en="Discuss a pilot" data-fr="Discuter d'un pilote">Discuss a pilot</span><i data-lucide="arrow-up-right"></i></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
       </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#expertise" data-en="Expertise" data-fr="Expertise">Expertise</a>
+      <a href="#applications" data-en="Applications" data-fr="Applications">Applications</a>
+      <a href="#architecture" data-en="Architecture" data-fr="Architecture">Architecture</a>
+      <a href="#approach" data-en="Approach" data-fr="Approche">Approach</a>
+      <a href="#contact" data-en="Discuss a pilot" data-fr="Discuter d'un pilote">Discuss a pilot</a>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-      <div class="hero-split-container">
-        <!-- Left Column: Headline & Value Proposition -->
-        <div class="hero-content">
-          <div class="badge-pill">
-            <span class="pulse-indicator"></span>
-            <span class="badge-text" data-i18n="hero.badge">COMPUTER VISION SYSTEMS</span>
-          </div>
-
-          <h1 class="hero-title" data-i18n="hero.title">
-            Vision that <br><span class="highlight-serif">protects.</span>
-          </h1>
-
-          <p class="hero-description" data-i18n="hero.description">
-            Sovereign edge computer vision solutions designed to make workplaces, industrial plants, logistics gateways, and academic environments safer, smarter, and strictly compliant — with 100% on-premise processing and transparent pricing of <strong>500 DH / camera / month</strong>.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#simulator" class="hero-cta-editorial" id="heroDemoBtn">
-              <span data-i18n="hero.ctaPrimary">Discover our expertise</span>
-              <span>→</span>
-            </a>
-            <a href="#sovereign" class="btn btn-secondary" id="heroEdgeBtn">
-              <i data-lucide="shield-check"></i>
-              <span data-i18n="hero.ctaSecondary">Zero-Cloud Sovereign Edge</span>
-            </a>
-          </div>
-
-          <!-- Quick Trust Metrics -->
-          <div class="hero-telemetry-strip">
-            <div class="telemetry-item">
-              <div class="telemetry-val"><span class="highlight-green">100%</span></div>
-              <div class="telemetry-lbl" data-i18n="hero.stat1">Local / Sovereign Data</div>
-            </div>
-            <div class="telemetry-divider"></div>
-            <div class="telemetry-item">
-              <div class="telemetry-val">&lt; <span class="highlight-cyan">25ms</span></div>
-              <div class="telemetry-lbl" data-i18n="hero.stat2">Real-Time Edge Latency</div>
-            </div>
-            <div class="telemetry-divider"></div>
-            <div class="telemetry-item">
-              <div class="telemetry-val"><span class="highlight-amber">500 DH</span></div>
-              <div class="telemetry-lbl" data-i18n="hero.stat3">Per Camera / Month</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Interactive CCTV Vision Player -->
-        <div class="hero-visual-card">
-          <div class="cctv-monitor-frame">
-            <!-- Top HUD Bar -->
-            <div class="cctv-header">
-              <div class="cctv-cam-id">
-                <span class="live-rec-dot"></span>
-                <span class="cam-name" id="heroCamLabel">CAM-04 [WAREHOUSE LOGISTICS]</span>
-              </div>
-              <div class="cctv-status-tags">
-                <span class="hud-tag hud-tag-active">SOVEREIGN EDGE ACTIVE</span>
-                <span class="hud-tag hud-tag-fps" id="heroFps">30.2 FPS</span>
-              </div>
-            </div>
-
-            <!-- Video Player Stage -->
-            <div class="cctv-video-stage" id="heroVideoContainer">
-              <!-- Video Feeds -->
-              <video id="heroVideoCompliant" class="hero-cctv-video active" muted playsinline loop preload="auto">
-                <source src="assets/demo-video-2.mp4" type="video/mp4">
-              </video>
-              <video id="heroVideoViolation" class="hero-cctv-video" muted playsinline loop preload="auto">
-                <source src="assets/demo-video-1.mp4" type="video/mp4">
-              </video>
-
-              <!-- Dynamic AI Bounding Box Overlays -->
-              <div class="ai-hud-overlay" id="aiHudOverlay">
-                <!-- Reticles & Crosshairs -->
-                <div class="hud-crosshair top-left"></div>
-                <div class="hud-crosshair top-right"></div>
-                <div class="hud-crosshair bottom-left"></div>
-                <div class="hud-crosshair bottom-right"></div>
-
-                <!-- Dynamic Bounding Box: Compliant Mode -->
-                <div class="ai-bbox bbox-compliant" id="bboxCompliant">
-                  <div class="bbox-tag">
-                    <span class="bbox-status-dot"></span>
-                    <span class="bbox-text">PPE verified ✓</span>
-                  </div>
-                  <div class="bbox-meta">
-                    <span>HELMET: 99.4%</span>
-                    <span>VEST: 98.8%</span>
-                    <span>ID: OP-05</span>
-                  </div>
-                </div>
-
-                <!-- Dynamic Bounding Box: Violation Mode -->
-                <div class="ai-bbox bbox-violation" id="bboxViolation">
-                  <div class="bbox-tag alert-pulse">
-                    <span class="bbox-status-dot alert"></span>
-                    <span class="bbox-text">⚠️ PPE VIOLATION</span>
-                  </div>
-                  <div class="bbox-meta alert-text">
-                    <span>NO HELMET DETECTED</span>
-                    <span>CONFIDENCE: 97.6%</span>
-                    <span>ACTION: ALARM DISPATCHED</span>
-                  </div>
-                </div>
-
-                <!-- Telemetry Stamp -->
-                <div class="hud-timestamp" id="hudTimestamp">2026-08-23 18:44:22 UTC</div>
-              </div>
-
-              <!-- Alert Banner Overlay (Visible in Violation Mode) -->
-              <div class="violation-alert-banner" id="violationAlertBanner">
-                <i data-lucide="alert-triangle"></i>
-                <span data-i18n="hero.alarmActive">SAFETY VIOLATION DETECTED // AUDIT LOGGED</span>
-              </div>
-            </div>
-
-            <!-- Bottom Video Controller Bar -->
-            <div class="cctv-controls">
-              <div class="cctv-scenario-toggles">
-                <button type="button" class="scenario-btn active" id="scenarioCompliantBtn" onclick="switchHeroFeed('compliant')">
-                  <i data-lucide="check-circle-2"></i>
-                  <span data-i18n="hero.feedCompliant">Feed A: PPE Compliant</span>
-                </button>
-                <button type="button" class="scenario-btn" id="scenarioViolationBtn" onclick="switchHeroFeed('violation')">
-                  <i data-lucide="alert-octagon"></i>
-                  <span data-i18n="hero.feedViolation">Feed B: Missing Helmet</span>
-                </button>
-              </div>
-
-              <div class="cctv-action-buttons">
-                <button type="button" class="ctrl-icon-btn" id="heroPlayPauseBtn" onclick="toggleHeroPlayback()" title="Play / Pause">
-                  <i data-lucide="pause" id="playPauseIcon"></i>
-                </button>
-                <button type="button" class="ctrl-icon-btn" id="heroMuteBtn" onclick="toggleHeroMute()" title="Toggle Sound">
-                  <i data-lucide="volume-x" id="muteIcon"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline poster="assets/hero-bg.jpeg"><source src="assets/demo-video-2.mp4" type="video/mp4"></video>
+        <div class="hero-scrim"></div>
+      </div>
+      <div class="hero-content reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span><span data-en="Sovereign computer vision" data-fr="Vision par ordinateur souveraine">Sovereign computer vision</span></p>
+        <h1><span data-en="Vision that protects" data-fr="Une vision qui protège">Vision that protects</span><br><em data-en="what matters." data-fr="ce qui compte.">what matters.</em></h1>
+        <p class="hero-copy" data-en="EyeSafe transforms existing camera infrastructure into private, real-time intelligence—helping critical environments detect risk, coordinate decisions and respond with confidence." data-fr="EyeSafe transforme les infrastructures de caméras existantes en intelligence privée et temps réel, afin d'aider les environnements critiques à détecter les risques, coordonner les décisions et agir avec confiance.">EyeSafe transforms existing camera infrastructure into private, real-time intelligence—helping critical environments detect risk, coordinate decisions and respond with confidence.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#applications"><span data-en="Explore the platform" data-fr="Explorer la plateforme">Explore the platform</span><i data-lucide="arrow-down-right"></i></a>
+          <a class="text-link" href="#architecture"><span data-en="See how it works" data-fr="Découvrir le fonctionnement">See how it works</span><i data-lucide="arrow-right"></i></a>
         </div>
       </div>
-
-      <!-- Scroll Anchor -->
-      <a href="#expertise" class="hero-scroll-indicator">
-        <span data-i18n="hero.scroll">SCROLL</span>
-        <i data-lucide="arrow-down"></i>
-      </a>
+      <div class="hero-status reveal" aria-label="Live system status">
+        <div><span class="status-light"></span><span data-en="Edge inference active" data-fr="Inférence Edge active">Edge inference active</span></div>
+        <div class="status-rule"></div>
+        <span data-en="Video remains on site" data-fr="La vidéo reste sur site">Video remains on site</span>
+      </div>
     </section>
 
-    <!-- Key Advantages Strip -->
-    <section class="strip-section" id="expertise">
-      <div class="container">
-        <div class="strip-header">
-          <span class="eyebrow" data-i18n="strip.eyebrow">OUR CORE CAPABILITIES</span>
-          <h2 class="section-title" data-i18n="strip.title">End-to-end computer vision built for high-stakes environments</h2>
-          <p class="section-subtext" data-i18n="strip.subtext">
-            EyeSafe connects directly to your existing CCTV and IP camera network, executing ultra-fast neural inferences locally on dedicated edge appliances.
-          </p>
+    <section class="assurance-strip" aria-label="Platform assurances">
+      <div class="assurance-inner">
+        <div><span class="assurance-index">01</span><p data-en="On-premise by design" data-fr="Conçu pour le déploiement local">On-premise by design</p></div>
+        <div><span class="assurance-index">02</span><p data-en="Works with existing cameras" data-fr="Compatible avec vos caméras">Works with existing cameras</p></div>
+        <div><span class="assurance-index">03</span><p data-en="Real-time operational alerts" data-fr="Alertes opérationnelles en temps réel">Real-time operational alerts</p></div>
+        <div><span class="assurance-index">04</span><p data-en="Built for controlled environments" data-fr="Pensé pour les environnements contrôlés">Built for controlled environments</p></div>
+      </div>
+    </section>
+
+    <section class="intro section" id="expertise">
+      <div class="section-grid">
+        <div class="section-kicker reveal"><span>01</span><p data-en="The platform" data-fr="La plateforme">The platform</p></div>
+        <div class="intro-copy reveal">
+          <h2 data-en="Turn passive cameras into an active layer of intelligence." data-fr="Transformez vos caméras passives en une couche d'intelligence active.">Turn passive cameras into an active layer of intelligence.</h2>
+          <p data-en="EyeSafe observes critical scenes locally, interprets events as they happen and delivers only the information teams need to act. The result is a clearer operational picture without sending sensitive footage to an external cloud." data-fr="EyeSafe observe localement les scènes critiques, interprète les événements en temps réel et transmet uniquement les informations utiles à l'action. Vos équipes gagnent en visibilité sans envoyer de séquences sensibles vers un cloud externe.">EyeSafe observes critical scenes locally, interprets events as they happen and delivers only the information teams need to act. The result is a clearer operational picture without sending sensitive footage to an external cloud.</p>
         </div>
+      </div>
+      <div class="capability-grid">
+        <article class="capability reveal"><i data-lucide="scan-eye"></i><div><span class="capability-number">01</span><h3 data-en="Perceive" data-fr="Percevoir">Perceive</h3><p data-en="Connect securely to existing video streams and identify relevant objects, behaviors and conditions." data-fr="Connexion sécurisée aux flux vidéo existants pour identifier les objets, comportements et situations pertinents.">Connect securely to existing video streams and identify relevant objects, behaviors and conditions.</p></div></article>
+        <article class="capability reveal"><i data-lucide="waypoints"></i><div><span class="capability-number">02</span><h3 data-en="Interpret" data-fr="Interpréter">Interpret</h3><p data-en="Apply context-aware rules at the edge, close to the scene and independent of public cloud connectivity." data-fr="Appliquer des règles contextuelles à la périphérie, au plus près du terrain et sans dépendance au cloud public.">Apply context-aware rules at the edge, close to the scene and independent of public cloud connectivity.</p></div></article>
+        <article class="capability reveal"><i data-lucide="radio-tower"></i><div><span class="capability-number">03</span><h3 data-en="Respond" data-fr="Réagir">Respond</h3><p data-en="Route actionable alerts and evidence to the right team, system or control point in real time." data-fr="Transmettre en temps réel les alertes et éléments utiles à la bonne équipe, au bon système ou au bon point de contrôle.">Route actionable alerts and evidence to the right team, system or control point in real time.</p></div></article>
+      </div>
+    </section>
 
-        <div class="feature-grid">
-          <!-- Feature 1 -->
-          <div class="feature-card">
-            <div class="feature-icon-wrapper icon-emerald">
-              <i data-lucide="hard-hat"></i>
-            </div>
-            <h3 class="feature-heading" data-i18n="feat1.title">Industrial Safety & PPE Auditing</h3>
-            <p class="feature-body" data-i18n="feat1.body">
-              Instant detection of helmets, reflective safety vests, gloves, harnesses, and safety goggles across shop floors, construction sites, and warehouses.
-            </p>
-            <ul class="feature-list">
-              <li><i data-lucide="check"></i> <span data-i18n="feat1.point1">&lt; 25ms real-time violation alarms</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat1.point2">Restricted zone geofencing & intrusion</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat1.point3">Forklift & pedestrian collision prevention</span></li>
-            </ul>
-          </div>
+    <section class="applications section" id="applications">
+      <div class="section-heading reveal">
+        <div class="section-kicker inline"><span>02</span><p data-en="Applications" data-fr="Applications">Applications</p></div>
+        <h2 data-en="One visual intelligence layer. Three high-stakes environments." data-fr="Une seule couche d'intelligence visuelle. Trois environnements critiques.">One visual intelligence layer. Three high-stakes environments.</h2>
+      </div>
+      <div class="case-grid">
+        <article class="case-card case-card-large reveal">
+          <div class="case-media"><video autoplay muted loop playsinline poster="assets/hero-bg.jpeg"><source src="assets/demo-video-1.mp4" type="video/mp4"></video><div class="case-overlay"></div><span class="case-tag"><span></span><b data-en="Industrial safety" data-fr="Sécurité industrielle">Industrial safety</b></span></div>
+          <div class="case-body"><div><span class="case-index">A / 01</span><h3 data-en="Protect people before an incident occurs." data-fr="Protéger les personnes avant qu'un incident ne survienne.">Protect people before an incident occurs.</h3></div><p data-en="Monitor PPE compliance, restricted areas and interactions between people and vehicles—while keeping safety teams focused on events that require attention." data-fr="Surveillez le port des EPI, les zones restreintes et les interactions entre personnes et véhicules, tout en concentrant les équipes HSE sur les événements qui exigent leur attention.">Monitor PPE compliance, restricted areas and interactions between people and vehicles—while keeping safety teams focused on events that require attention.</p></div>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-media"><img src="assets/gate-anpr-cctv.jpg" alt="Freight truck entering an industrial checkpoint with visual recognition overlays"><div class="case-overlay"></div><span class="case-tag"><span></span><b data-en="Access & logistics" data-fr="Accès & logistique">Access & logistics</b></span></div>
+          <div class="case-body compact"><span class="case-index">A / 02</span><h3 data-en="Make every arrival visible and verifiable." data-fr="Rendre chaque arrivée visible et vérifiable.">Make every arrival visible and verifiable.</h3><p data-en="Recognize vehicles, plates and container references to support faster, more controlled site access." data-fr="Reconnaître les véhicules, plaques et références de conteneurs pour fluidifier et sécuriser l'accès au site.">Recognize vehicles, plates and container references to support faster, more controlled site access.</p></div>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-media"><img src="assets/exam-proctor-cctv.jpg" alt="Examination room monitored by visual intelligence software"><div class="case-overlay"></div><span class="case-tag"><span></span><b data-en="Academic integrity" data-fr="Intégrité académique">Academic integrity</b></span></div>
+          <div class="case-body compact"><span class="case-index">A / 03</span><h3 data-en="Support fair, attentive supervision at scale." data-fr="Soutenir une supervision équitable et attentive à grande échelle.">Support fair, attentive supervision at scale.</h3><p data-en="Surface unusual events for human review and create a consistent, time-referenced record for exam teams." data-fr="Signaler les événements inhabituels pour examen humain et créer un historique cohérent et horodaté pour les équipes.">Surface unusual events for human review and create a consistent, time-referenced record for exam teams.</p></div>
+        </article>
+      </div>
+    </section>
 
-          <!-- Feature 2 -->
-          <div class="feature-card">
-            <div class="feature-icon-wrapper icon-cyan">
-              <i data-lucide="truck"></i>
-            </div>
-            <h3 class="feature-heading" data-i18n="feat2.title">Matriculation & Truck Gate Logistics</h3>
-            <p class="feature-body" data-i18n="feat2.body">
-              Automated License Plate Recognition (ALPR/ANPR), container serial decoding, and automated manifest matching to verify authorized freight entering factories.
-            </p>
-            <ul class="feature-list">
-              <li><i data-lucide="check"></i> <span data-i18n="feat2.point1">Automatic inbound/outbound vehicle logging</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat2.point2">Non-fleet & unauthorized truck alerts</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat2.point3">Automated barrier & gate access trigger</span></li>
-            </ul>
+    <section class="architecture section" id="architecture">
+      <div class="architecture-layout">
+        <div class="architecture-copy reveal">
+          <div class="section-kicker inline light"><span>03</span><p data-en="Private by architecture" data-fr="Privé par architecture">Private by architecture</p></div>
+          <h2 data-en="Your video stays where it belongs." data-fr="Vos vidéos restent là où elles doivent être.">Your video stays where it belongs.</h2>
+          <p data-en="EyeSafe processes camera streams inside your environment. Raw footage does not need to travel to a third-party cloud for interpretation, giving your organization direct control over data, latency and continuity." data-fr="EyeSafe traite les flux caméra au sein de votre environnement. Les séquences brutes n'ont pas besoin d'être envoyées vers un cloud tiers, ce qui vous donne un contrôle direct sur les données, la latence et la continuité.">EyeSafe processes camera streams inside your environment. Raw footage does not need to travel to a third-party cloud for interpretation, giving your organization direct control over data, latency and continuity.</p>
+          <a class="button button-accent" href="#contact"><span data-en="Discuss your environment" data-fr="Échanger sur votre environnement">Discuss your environment</span><i data-lucide="arrow-up-right"></i></a>
+        </div>
+        <div class="architecture-diagram reveal" aria-label="EyeSafe on-premise data flow">
+          <div class="diagram-label" data-en="On-site processing flow" data-fr="Flux de traitement sur site">On-site processing flow</div>
+          <div class="diagram-stage">
+            <div class="diagram-node"><div class="node-icon"><i data-lucide="cctv"></i></div><span data-en="Camera network" data-fr="Réseau de caméras">Camera network</span><small>RTSP / ONVIF</small></div>
+            <div class="diagram-connector"><span></span><i data-lucide="chevron-right"></i></div>
+            <div class="diagram-node active"><div class="node-icon"><i data-lucide="cpu"></i></div><span data-en="EyeSafe edge" data-fr="Edge EyeSafe">EyeSafe edge</span><small data-en="Local inference" data-fr="Inférence locale">Local inference</small></div>
+            <div class="diagram-connector"><span></span><i data-lucide="chevron-right"></i></div>
+            <div class="diagram-node"><div class="node-icon"><i data-lucide="bell-ring"></i></div><span data-en="Operational action" data-fr="Action opérationnelle">Operational action</span><small data-en="Alert / control / audit" data-fr="Alerte / contrôle / audit">Alert / control / audit</small></div>
           </div>
-
-          <!-- Feature 3 -->
-          <div class="feature-card">
-            <div class="feature-icon-wrapper icon-purple">
-              <i data-lucide="graduation-cap"></i>
-            </div>
-            <h3 class="feature-heading" data-i18n="feat3.title">Academic & Examination Integrity</h3>
-            <p class="feature-body" data-i18n="feat3.body">
-              Anti-cheating vision models for exam amphitheaters and test centers. Flags concealed smartphone usage, unauthorized materials, and suspicious gaze patterns.
-            </p>
-            <ul class="feature-list">
-              <li><i data-lucide="check"></i> <span data-i18n="feat3.point1">Concealed phone & device detection</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat3.point2">Silent real-time notifications to proctors</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat3.point3">Time-stamped audit video bookmarks</span></li>
-            </ul>
-          </div>
-
-          <!-- Feature 4 -->
-          <div class="feature-card highlight-card">
-            <div class="feature-icon-wrapper icon-amber">
-              <i data-lucide="cpu"></i>
-            </div>
-            <h3 class="feature-heading" data-i18n="feat4.title">100% On-Premise Sovereign Edge</h3>
-            <p class="feature-body" data-i18n="feat4.body">
-              Zero video streams leave your company network or national borders. Full compliance with Moroccan Law 09-08, DGSSI cybersecurity mandates, and GDPR.
-            </p>
-            <ul class="feature-list">
-              <li><i data-lucide="check"></i> <span data-i18n="feat4.point1">Zero external cloud bandwidth dependency</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat4.point2">Fixed 500 DH / camera / month pricing</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat4.point3">Compatible with standard RTSP/ONVIF cameras</span></li>
-            </ul>
-          </div>
+          <div class="privacy-boundary"><i data-lucide="shield-check"></i><span data-en="Private network boundary · raw video remains under your control" data-fr="Périmètre réseau privé · la vidéo brute reste sous votre contrôle">Private network boundary · raw video remains under your control</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Multi-Camera Live Simulator -->
-    <section class="simulator-section" id="simulator">
-      <div class="container">
-        <div class="section-header text-center">
-          <div class="badge-pill center-pill">
-            <i data-lucide="cctv"></i>
-            <span data-i18n="sim.pill">INTERACTIVE CAMERA SUITE</span>
-          </div>
-          <h2 class="section-title" data-i18n="sim.title">Experience EyeSafe Live Feeds</h2>
-          <p class="section-subtext mx-auto" data-i18n="sim.subtext">
-            Switch between simulated enterprise camera feeds to inspect real-time neural detection boxes, confidence metrics, and instant alarms.
-          </p>
-        </div>
-
-        <div class="sim-wrapper">
-          <!-- Feed Switcher Tabs -->
-          <div class="sim-tabs">
-            <button type="button" class="sim-tab active" id="tabCam1" onclick="switchSimFeed('cam1')">
-              <div class="tab-indicator"></div>
-              <div class="tab-info">
-                <span class="tab-title" data-i18n="sim.tab1Title">CAM-01: Factory Shop Floor</span>
-                <span class="tab-desc" data-i18n="sim.tab1Desc">PPE Compliance & Safety Auditing</span>
-              </div>
-              <span class="badge-tag tag-green">LIVE</span>
-            </button>
-
-            <button type="button" class="sim-tab" id="tabCam2" onclick="switchSimFeed('cam2')">
-              <div class="tab-indicator"></div>
-              <div class="tab-info">
-                <span class="tab-title" data-i18n="sim.tab2Title">CAM-02: Logistics Gate 02</span>
-                <span class="tab-desc" data-i18n="sim.tab2Desc">ALPR Truck & Container Matriculation</span>
-              </div>
-              <span class="badge-tag tag-cyan">ACTIVE</span>
-            </button>
-
-            <button type="button" class="sim-tab" id="tabCam3" onclick="switchSimFeed('cam3')">
-              <div class="tab-indicator"></div>
-              <div class="tab-info">
-                <span class="tab-title" data-i18n="sim.tab3Title">CAM-03: Exam Amphitheater</span>
-                <span class="tab-desc" data-i18n="sim.tab3Desc">Anti-Cheating & Phone Detection</span>
-              </div>
-              <span class="badge-tag tag-purple">MONITORING</span>
-            </button>
-          </div>
-
-          <!-- Active Feed Stage -->
-          <div class="sim-stage-container">
-            <div class="sim-stage-header">
-              <div class="sim-feed-meta">
-                <span class="pulse-dot"></span>
-                <span id="simFeedTitle">CAM-01 // PRODUCTION WORKSHOP A</span>
-              </div>
-              <div class="sim-node-stats">
-                <span>MODEL: <strong id="simModelName">EyeSafe-PPE-YOLOv10</strong></span>
-                <span>INFERENCE: <strong class="highlight-cyan" id="simLatency">14.2 ms</strong></span>
-                <span>EDGE NODE: <strong class="highlight-green">ON-PREM RTX</strong></span>
-              </div>
-            </div>
-
-            <!-- Feed Viewport -->
-            <div class="sim-viewport" id="simViewport">
-              <!-- Feed 1: PPE Video Feed -->
-              <div class="sim-feed-item active" id="simFeed1">
-                <video id="simVideo" class="sim-video-element" muted playsinline loop autoplay>
-                  <source src="assets/demo-video-2.mp4" type="video/mp4">
-                </video>
-                <div class="sim-overlay-box" style="top: 22%; left: 38%; width: 24%; height: 58%;">
-                  <div class="sim-box-header green-header">
-                    <span>PPE COMPLIANT [99.2%]</span>
-                  </div>
-                  <div class="sim-box-details">
-                    <div>• HARD HAT: PRESENT (99.4%)</div>
-                    <div>• HIGH-VIS VEST: PRESENT (98.6%)</div>
-                    <div>• STATUS: AUTHORIZED</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Feed 2: Gate ANPR Feed -->
-              <div class="sim-feed-item" id="simFeed2">
-                <img src="assets/gate-anpr-cctv.jpg" alt="Logistics Gate ANPR Camera Feed" class="sim-img-element">
-                <div class="sim-overlay-box" style="top: 32%; left: 32%; width: 28%; height: 50%;">
-                  <div class="sim-box-header cyan-header">
-                    <span>FREIGHT TRUCK // INBOUND</span>
-                  </div>
-                  <div class="sim-box-details">
-                    <div>• PLATE: 18492-A-50 (CONF: 99.8%)</div>
-                    <div>• MANIFEST: MATCHED #L49120</div>
-                    <div>• GATE: ACCESS GRANTED</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Feed 3: Exam Anti-Cheating Feed -->
-              <div class="sim-feed-item" id="simFeed3">
-                <img src="assets/exam-proctor-cctv.jpg" alt="Amphitheater Exam Proctoring CCTV" class="sim-img-element">
-                <div class="sim-overlay-box" style="top: 40%; left: 58%; width: 18%; height: 35%;">
-                  <div class="sim-box-header red-header">
-                    <span>⚠️ CHEATING VIOLATION [96.2%]</span>
-                  </div>
-                  <div class="sim-box-details red-details">
-                    <div>• OBJECT: PHONE DETECTED</div>
-                    <div>• DESK: ROW 4 / SEAT 12</div>
-                    <div>• ALERT: PROCTOR NOTIFIED</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Real-time HUD Grid Lines -->
-              <div class="sim-grid-lines"></div>
-            </div>
-
-            <!-- Feed Interactive Controls Toolbar -->
-            <div class="sim-stage-footer">
-              <div class="sim-control-group">
-                <label for="confSlider" data-i18n="sim.confThreshold">Detection Confidence Threshold:</label>
-                <input type="range" id="confSlider" min="50" max="99" value="85" oninput="updateConfidence(this.value)">
-                <span class="slider-val" id="confVal">85%</span>
-              </div>
-
-              <div class="sim-toggles">
-                <button type="button" class="sim-btn-toggle active" id="toggleBoxesBtn" onclick="toggleHudBoxes()">
-                  <i data-lucide="scan"></i>
-                  <span data-i18n="sim.bounding">Bounding Boxes</span>
-                </button>
-                <button type="button" class="sim-btn-toggle active" id="toggleGridBtn" onclick="toggleHudGrid()">
-                  <i data-lucide="grid"></i>
-                  <span data-i18n="sim.telemetry">HUD Telemetry</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="approach section" id="approach">
+      <div class="section-heading narrow reveal">
+        <div class="section-kicker inline"><span>04</span><p data-en="A measured approach" data-fr="Une approche maîtrisée">A measured approach</p></div>
+        <h2 data-en="From one priority use case to an operational deployment." data-fr="D'un cas d'usage prioritaire à un déploiement opérationnel.">From one priority use case to an operational deployment.</h2>
+      </div>
+      <div class="process-list">
+        <article class="process-item reveal"><span class="process-number">01</span><div><h3 data-en="Understand the site" data-fr="Comprendre le site">Understand the site</h3><p data-en="We map the operational objective, camera coverage, environment and constraints." data-fr="Nous cartographions l'objectif opérationnel, la couverture caméra, l'environnement et les contraintes.">We map the operational objective, camera coverage, environment and constraints.</p></div><i data-lucide="move-down-right"></i></article>
+        <article class="process-item reveal"><span class="process-number">02</span><div><h3 data-en="Validate in context" data-fr="Valider en contexte">Validate in context</h3><p data-en="A focused pilot tests the use case against real conditions and team workflows." data-fr="Un pilote ciblé teste le cas d'usage dans des conditions réelles et avec les processus de vos équipes.">A focused pilot tests the use case against real conditions and team workflows.</p></div><i data-lucide="move-down-right"></i></article>
+        <article class="process-item reveal"><span class="process-number">03</span><div><h3 data-en="Deploy with control" data-fr="Déployer avec maîtrise">Deploy with control</h3><p data-en="We integrate the edge system, alert paths and governance around your operation." data-fr="Nous intégrons le système Edge, les circuits d'alerte et la gouvernance autour de vos opérations.">We integrate the edge system, alert paths and governance around your operation.</p></div><i data-lucide="check"></i></article>
       </div>
     </section>
 
-    <!-- Sovereign Edge Architecture vs Cloud -->
-    <section class="sovereign-section" id="sovereign">
-      <div class="container">
-        <div class="section-header text-center">
-          <div class="badge-pill center-pill">
-            <i data-lucide="lock"></i>
-            <span data-i18n="sov.pill">DATA SOVEREIGNTY & ZERO CLOUD</span>
-          </div>
-          <h2 class="section-title" data-i18n="sov.title">Why 100% On-Premise Changes Everything</h2>
-          <p class="section-subtext mx-auto" data-i18n="sov.subtext">
-            Standard cloud AI solutions stream sensitive surveillance feeds out of your facility into public clouds, racking up unpredictable per-frame bills while violating national privacy laws. EyeSafe executes 100% on the local edge.
-          </p>
-        </div>
-
-        <div class="comparison-grid">
-          <!-- Traditional Cloud Card -->
-          <div class="comparison-card card-cloud">
-            <div class="comp-card-badge red-badge">
-              <i data-lucide="cloud-off"></i>
-              <span data-i18n="sov.cloudBadge">TRADITIONAL CLOUD VISION (AWS/AZURE)</span>
-            </div>
-            <h3 class="comp-title" data-i18n="sov.cloudTitle">High Risk & Recurring Cloud Tax</h3>
-            
-            <ul class="comp-list negative-list">
-              <li>
-                <i data-lucide="x-circle"></i>
-                <div>
-                  <strong data-i18n="sov.c1Title">Data Leaves the Country:</strong>
-                  <span data-i18n="sov.c1Desc">CCTV video streams sent to external cloud servers, violating Moroccan Law 09-08 and data residency rules.</span>
-                </div>
-              </li>
-              <li>
-                <i data-lucide="x-circle"></i>
-                <div>
-                  <strong data-i18n="sov.c2Title">Massive Recurring Ingestion Costs:</strong>
-                  <span data-i18n="sov.c2Desc">Per-frame API calls cost $5,000–$25,000+ monthly for multi-camera 24/7 continuous operations.</span>
-                </div>
-              </li>
-              <li>
-                <i data-lucide="x-circle"></i>
-                <div>
-                  <strong data-i18n="sov.c3Title">High Latency & Internet Dependency:</strong>
-                  <span data-i18n="sov.c3Desc">300ms–1500ms delay. If internet connection drops, security and safety monitoring completely fails.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- EyeSafe Sovereign Card -->
-          <div class="comparison-card card-eyesafe">
-            <div class="comp-card-badge green-badge">
-              <i data-lucide="shield-check"></i>
-              <span data-i18n="sov.eyeBadge">EYESAFE SOVEREIGN EDGE</span>
-            </div>
-            <h3 class="comp-title" data-i18n="sov.eyeTitle">100% Local, Air-Gapped & 500 DH / Camera / Mo</h3>
-
-            <ul class="comp-list positive-list">
-              <li>
-                <i data-lucide="check-circle-2"></i>
-                <div>
-                  <strong data-i18n="sov.e1Title">Zero Video Data Exfiltration:</strong>
-                  <span data-i18n="sov.e1Desc">Streams never leave your local physical LAN. Full compliance with DGSSI, national security, and enterprise sovereignty.</span>
-                </div>
-              </li>
-              <li>
-                <i data-lucide="check-circle-2"></i>
-                <div>
-                  <strong data-i18n="sov.e2Title">Transparent & Flat 500 DH / Cam Rate:</strong>
-                  <span data-i18n="sov.e2Desc">Simple monthly subscription per camera. Run 24/7 continuous inference without unpredictable per-frame overage charges.</span>
-                </div>
-              </li>
-              <li>
-                <i data-lucide="check-circle-2"></i>
-                <div>
-                  <strong data-i18n="sov.e3Title">Sub-25ms Real-Time Alarm Latency:</strong>
-                  <span data-i18n="sov.e3Desc">Hardware-accelerated edge inference (TensorRT / ONNX) executes locally even in completely air-gapped environments.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ISO/IEC AI Management & Governance Standards Section -->
-    <section class="standards-section" id="standards">
-      <div class="container">
-        <div class="section-header text-center">
-          <div class="badge-pill center-pill">
-            <i data-lucide="shield-alert"></i>
-            <span data-i18n="iso.pill">GLOBAL AI GOVERNANCE & COMPLIANCE</span>
-          </div>
-          <h2 class="section-title" data-i18n="iso.title">ISO/IEC 42001:2023 Certified AI Governance</h2>
-          <p class="section-subtext mx-auto" data-i18n="iso.subtext">
-            The primary international standard for integrating and managing artificial intelligence in industry is <strong>ISO/IEC 42001:2023</strong>. It provides a certifiable framework for establishing an Artificial Intelligence Management System (AIMS), helping organizations responsibly develop, deploy, and govern AI technologies across manufacturing, logistics, and institutional sectors.
-          </p>
-        </div>
-
-        <!-- Core ISO Standards Grid -->
-        <div class="standards-core-grid">
-          <div class="standard-card primary-iso">
-            <div class="standard-header">
-              <span class="standard-code">ISO/IEC 42001</span>
-              <span class="standard-tag">AIMS FRAMEWORK</span>
-            </div>
-            <h3 class="standard-name" data-i18n="iso.s1Title">AI Management System (AIMS)</h3>
-            <p class="standard-desc" data-i18n="iso.s1Desc">
-              Specifies requirements for building, maintaining, and continually improving an organizational AI governance and management framework tailored for enterprise operations.
-            </p>
-          </div>
-
-          <div class="standard-card">
-            <div class="standard-header">
-              <span class="standard-code">ISO/IEC 23894</span>
-              <span class="standard-tag tag-cyan">RISK MANAGEMENT</span>
-            </div>
-            <h3 class="standard-name" data-i18n="iso.s2Title">AI Risk Management Guidance</h3>
-            <p class="standard-desc" data-i18n="iso.s2Desc">
-              Offers practical guidance on managing specific risks, failure modes, and safety hazards tied to artificial intelligence projects and operational computer vision strategies.
-            </p>
-          </div>
-
-          <div class="standard-card">
-            <div class="standard-header">
-              <span class="standard-code">ISO/IEC 5338</span>
-              <span class="standard-tag tag-purple">LIFECYCLE</span>
-            </div>
-            <h3 class="standard-name" data-i18n="iso.s3Title">AI System Lifecycle Processes</h3>
-            <p class="standard-desc" data-i18n="iso.s3Desc">
-              Defines robust engineering lifecycle processes specifically designed for neural network deployment, continuous verification, validation, and maintenance.
-            </p>
-          </div>
-
-          <div class="standard-card">
-            <div class="standard-header">
-              <span class="standard-code">ISO/IEC 23053</span>
-              <span class="standard-tag tag-amber">FRAMEWORK & VOCAB</span>
-            </div>
-            <h3 class="standard-name" data-i18n="iso.s4Title">Machine Learning Framework</h3>
-            <p class="standard-desc" data-i18n="iso.s4Desc">
-              Establishes a common terminology, architectural framework, and computational vocabulary for machine learning, pipeline auditing, and AI system components.
-            </p>
-          </div>
-        </div>
-
-        <!-- Key Benefits of ISO AI Adoption -->
-        <div class="iso-benefits-box">
-          <h3 class="benefits-title" data-i18n="iso.benefitsTitle">Key Strategic Benefits of ISO AI Integration</h3>
-          <div class="benefits-grid">
-            <div class="benefit-item">
-              <div class="benefit-icon"><i data-lucide="shield-check"></i></div>
-              <div>
-                <strong data-i18n="iso.b1Title">Risk Mitigation:</strong>
-                <span data-i18n="iso.b1Desc">Systematically addresses unique threats like data bias, security flaws, false positives, and model drift in physical plants.</span>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon"><i data-lucide="scale"></i></div>
-              <div>
-                <strong data-i18n="iso.b2Title">Regulatory Compliance:</strong>
-                <span data-i18n="iso.b2Desc">Aligns internal industrial processes with emerging global rules, the EU AI Act, and national data protection mandates.</span>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon"><i data-lucide="file-check"></i></div>
-              <div>
-                <strong data-i18n="iso.b3Title">Traceability & Auditing:</strong>
-                <span data-i18n="iso.b3Desc">Improves documentation, incident playback, and telemetry across the entire machine learning and operational pipeline.</span>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon"><i data-lucide="users"></i></div>
-              <div>
-                <strong data-i18n="iso.b4Title">Stakeholder Trust:</strong>
-                <span data-i18n="iso.b4Desc">Provides verifiable, third-party auditable proof of responsible, transparent, and ethical AI usage across all facilities.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Official References & Citations -->
-          <div class="iso-references-bar">
-            <span class="ref-label" data-i18n="iso.refLabel">Official Framework & Governance Resources:</span>
-            <div class="ref-links-list">
-              <a href="https://www.iso.org/sectors/it-technologies/ai" target="_blank" rel="noopener" class="ref-chip">
-                <i data-lucide="external-link"></i>
-                <span>ISO Official Standards Portal</span>
-              </a>
-              <a href="https://kpmg.com/ch/en/insights/artificial-intelligence/iso-iec-42001.html" target="_blank" rel="noopener" class="ref-chip">
-                <i data-lucide="external-link"></i>
-                <span>KPMG Insights on ISO 42001</span>
-              </a>
-              <a href="https://www.softwareimprovementgroup.com/blog/iso-standards-for-ai/" target="_blank" rel="noopener" class="ref-chip">
-                <i data-lucide="external-link"></i>
-                <span>Software Improvement Group AI Guide</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Cloud vs Edge ROI Calculator (500 DH / Camera / Mo) -->
-    <section class="calculator-section" id="calculator">
-      <div class="container">
-        <div class="calc-card">
-          <div class="calc-header">
-            <div class="badge-pill">
-              <i data-lucide="calculator"></i>
-              <span data-i18n="calc.pill">TRANSPARENT PRICING & ROI ESTIMATOR</span>
-            </div>
-            <h2 class="section-title" data-i18n="calc.title">Analyze Your Costs & 3-Year Cloud Savings</h2>
-            <p class="section-subtext" data-i18n="calc.subtext">
-              EyeSafe offers a transparent, predictable rate of <strong>500 DH / camera / month</strong>. Compare this against traditional per-frame cloud APIs to analyze your operational savings.
-            </p>
-          </div>
-
-          <div class="calc-body">
-            <div class="calc-inputs">
-              <!-- Slider 1: Camera Count -->
-              <div class="calc-slider-block">
-                <div class="slider-label-row">
-                  <label for="cameraCountInput" data-i18n="calc.numCams">Active Camera Streams:</label>
-                  <span class="slider-display" id="cameraCountDisplay">16 Cameras</span>
-                </div>
-                <input type="range" id="cameraCountInput" min="2" max="100" step="2" value="16" oninput="calculateSavings()">
-              </div>
-
-              <!-- Slider 2: Operating Hours -->
-              <div class="calc-slider-block">
-                <div class="slider-label-row">
-                  <label for="hoursInput" data-i18n="calc.hours">Daily Operating Hours:</label>
-                  <span class="slider-display" id="hoursDisplay">16 Hours / Day</span>
-                </div>
-                <input type="range" id="hoursInput" min="8" max="24" step="4" value="16" oninput="calculateSavings()">
-              </div>
-
-              <!-- Slider 3: FPS -->
-              <div class="calc-slider-block">
-                <div class="slider-label-row">
-                  <label for="fpsInput" data-i18n="calc.fps">Inference Sampling Rate:</label>
-                  <span class="slider-display" id="fpsDisplay">10 FPS</span>
-                </div>
-                <input type="range" id="fpsInput" min="5" max="30" step="5" value="10" oninput="calculateSavings()">
-              </div>
-            </div>
-
-            <div class="calc-results">
-              <div class="result-metric-card">
-                <div class="result-label" data-i18n="calc.cloudEst">Estimated Cloud API Cost (3 Yrs):</div>
-                <div class="result-amount red-amount" id="cloudCostAmount">$84,096 USD (≈ 840,960 MAD)</div>
-                <div class="result-sub" data-i18n="calc.cloudSub">Based on standard $0.0015 / frame cloud vision ingestion + bandwidth</div>
-              </div>
-
-              <div class="result-metric-card highlight-metric">
-                <div class="result-label" data-i18n="calc.eyeEst">EyeSafe Sovereign Edge Investment (3 Yrs):</div>
-                <div class="result-amount green-amount" id="eyeCostAmount">288,000 MAD (8,000 DH/mo)</div>
-                <div class="result-sub" data-i18n="calc.eyeSub">Fixed 500 DH / camera / month — unlimited 24/7 inference, zero cloud overages</div>
-              </div>
-
-              <div class="savings-summary-banner">
-                <div class="savings-title" data-i18n="calc.totalSavings">Net 3-Year Operational Savings:</div>
-                <div class="savings-figure" id="totalSavingsFigure">552,960 MAD saved (≈ $55,296 USD)</div>
-                <div class="savings-bandwidth" id="bandwidthSavedFigure">💾 184 Terabytes of private surveillance data kept 100% on-premise</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Architecture & Hardware Integration -->
-    <section class="integration-section" id="solutions">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="eyebrow" data-i18n="int.eyebrow">INTEGRATION WORKFLOW</span>
-          <h2 class="section-title" data-i18n="int.title">Plug-and-play into your existing CCTV network</h2>
-          <p class="section-subtext mx-auto" data-i18n="int.subtext">
-            No expensive camera replacements or proprietary rewiring. EyeSafe connects directly to your existing IP cameras via standard RTSP/ONVIF protocols.
-          </p>
-        </div>
-
-        <div class="workflow-steps">
-          <div class="step-card">
-            <div class="step-num">01</div>
-            <div class="step-icon"><i data-lucide="video"></i></div>
-            <h3 class="step-title" data-i18n="int.step1Title">Existing IP / CCTV Cameras</h3>
-            <p class="step-desc" data-i18n="int.step1Desc">
-              Connect effortlessly to any Hikvision, Dahua, Axis, Hanwha, or generic RTSP video feed over your private local network.
-            </p>
-          </div>
-
-          <div class="step-arrow"><i data-lucide="chevrons-right"></i></div>
-
-          <div class="step-card">
-            <div class="step-num">02</div>
-            <div class="step-icon"><i data-lucide="server"></i></div>
-            <h3 class="step-title" data-i18n="int.step2Title">EyeSafe Sovereign Edge Node</h3>
-            <p class="step-desc" data-i18n="int.step2Desc">
-              Our compact edge server (NVIDIA RTX / Jetson / Local Server) processes streams with TensorRT & ONNX Runtime with zero internet exposure.
-            </p>
-          </div>
-
-          <div class="step-arrow"><i data-lucide="chevrons-right"></i></div>
-
-          <div class="step-card">
-            <div class="step-num">03</div>
-            <div class="step-icon"><i data-lucide="bell-ring"></i></div>
-            <h3 class="step-title" data-i18n="int.step3Title">Instant Alarms & Automation</h3>
-            <p class="step-desc" data-i18n="int.step3Desc">
-              Trigger physical sirens, automated gate barriers, WhatsApp/SMS supervisor alerts, and automated HSE dashboard reports.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Pilot Booking Section -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="contact-card">
-          <div class="contact-grid">
-            <div class="contact-intro">
-              <div class="badge-pill">
-                <i data-lucide="rocket"></i>
-                <span data-i18n="contact.pill">PILOT DEPLOYMENT</span>
-              </div>
-              <h2 class="section-title" data-i18n="contact.title">Deploy EyeSafe in Your Facility</h2>
-              <p class="section-subtext" data-i18n="contact.subtext">
-                Ready to eliminate safety compliance blindspots, automate gate matriculation, or secure your exam facilities? Request a 14-day on-premise Proof of Concept at 500 DH / camera / month.
-              </p>
-
-              <div class="contact-perks">
-                <div class="perk-item">
-                  <i data-lucide="check-circle" class="highlight-green"></i>
-                  <span data-i18n="contact.perk1">100% On-Site Testing with Your Existing Cameras</span>
-                </div>
-                <div class="perk-item">
-                  <i data-lucide="check-circle" class="highlight-green"></i>
-                  <span data-i18n="contact.perk2">Zero Cloud Setup & Full Data Privacy Guarantee</span>
-                </div>
-                <div class="perk-item">
-                  <i data-lucide="check-circle" class="highlight-green"></i>
-                  <span data-i18n="contact.perk3">ISO/IEC 42001:2023 Compliant Governance Framework</span>
-                </div>
-                <div class="perk-item">
-                  <i data-lucide="check-circle" class="highlight-green"></i>
-                  <span data-i18n="contact.perk4">Transparent Flat Rate: 500 DH / Camera / Month</span>
-                </div>
-              </div>
-
-              <div class="direct-reachout">
-                <h4 data-i18n="contact.directTitle">Direct Contact & Instant WhatsApp:</h4>
-                <div class="direct-btn-group">
-                  <a href="https://wa.me/212666774426?text=Hello,%20I'm%20interested%20in%20a%20pilot%20demonstration%20for%20EyeSafe%20Computer%20Vision%20(500%20DH/cam/mo)." target="_blank" rel="noopener" class="btn btn-whatsapp">
-                    <i data-lucide="message-circle"></i>
-                    <span>Chat on WhatsApp (+212 666-774426)</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Contact / Pilot Form -->
-            <form class="contact-form" id="pilotForm" onsubmit="handleFormSubmit(event)">
-              <h3 class="form-heading" data-i18n="form.heading">Request an On-Site Pilot</h3>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="clientName" data-i18n="form.name">Full Name *</label>
-                  <input type="text" id="clientName" required placeholder="e.g. Karim Bennani">
-                </div>
-                <div class="form-group">
-                  <label for="clientOrg" data-i18n="form.org">Company / Institution *</label>
-                  <input type="text" id="clientOrg" required placeholder="e.g. Factory / School / Logistics Center">
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="clientEmail" data-i18n="form.email">Professional Email *</label>
-                  <input type="email" id="clientEmail" required placeholder="name@company.com">
-                </div>
-                <div class="form-group">
-                  <label for="clientPhone" data-i18n="form.phone">Phone / WhatsApp *</label>
-                  <input type="tel" id="clientPhone" required placeholder="+212 600-000000">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="useCaseSelect" data-i18n="form.useCase">Primary Use Case *</label>
-                <select id="useCaseSelect" required>
-                  <option value="ppe" data-i18n="form.optPpe">Industrial Safety & PPE Detection (Helmets, Vests, Gloves)</option>
-                  <option value="logistics" data-i18n="form.optLogistics">Logistics Gate Matriculation & Truck ANPR</option>
-                  <option value="exam" data-i18n="form.optExam">Academic Exam Integrity & Anti-Cheating</option>
-                  <option value="custom" data-i18n="form.optCustom">Multi-Facility Custom Edge Deployment</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="cameraEst" data-i18n="form.camEst">Approximate Number of Cameras</label>
-                <select id="cameraEst">
-                  <option value="1-5">1 – 5 Cameras (500 DH / cam / mo)</option>
-                  <option value="5-20">5 – 20 Cameras (Facility / Warehouse)</option>
-                  <option value="20-100">20 – 100 Cameras (Multi-Plant / Campus)</option>
-                  <option value="100+">100+ Enterprise Fleet</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="clientMsg" data-i18n="form.msg">Project Details & Requirements</label>
-                <textarea id="clientMsg" rows="3" placeholder="Describe your operational site, camera setup, or specific safety requirements..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block" id="submitFormBtn">
-                <span data-i18n="form.submit">Submit Pilot Request</span>
-                <i data-lucide="send"></i>
-              </button>
-
-              <div class="form-success-alert" id="formSuccessAlert" style="display: none;">
-                <i data-lucide="check-circle-2"></i>
-                <span data-i18n="form.success">Thank you! Your request has been received. Our team will contact you within 24 hours.</span>
-              </div>
-            </form>
-          </div>
+    <section class="contact section" id="contact">
+      <div class="contact-panel reveal">
+        <div class="contact-topline"><span data-en="Private pilot consultation" data-fr="Consultation pilote confidentielle">Private pilot consultation</span><span>Casablanca · Morocco</span></div>
+        <div class="contact-content">
+          <h2 data-en="Bring intelligence closer to the moment that matters." data-fr="Rapprochez l'intelligence du moment qui compte.">Bring intelligence closer to the moment that matters.</h2>
+          <div class="contact-action"><p data-en="Tell us about one operational challenge. We will explore how a focused on-site pilot could address it." data-fr="Présentez-nous un défi opérationnel. Nous étudierons comment un pilote ciblé sur site peut y répondre.">Tell us about one operational challenge. We will explore how a focused on-site pilot could address it.</p><a class="button button-dark" href="mailto:contact@eyesafe.ai?subject=EyeSafe%20pilot%20consultation"><span>contact@eyesafe.ai</span><i data-lucide="arrow-up-right"></i></a></div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-brand-col">
-        <a href="#hero" class="brand-logo">
-          <div class="brand-optic-icon">
-            <div class="optic-ring"></div>
-            <div class="optic-reticle"></div>
-            <div class="optic-dot"></div>
-          </div>
-          <div class="brand-text">
-            <span class="brand-name">Eye<span class="brand-accent">Safe</span></span>
-            <span class="brand-tagline">SOVEREIGN AI</span>
-          </div>
-        </a>
-        <p class="footer-desc" data-i18n="footer.desc">
-          Sovereign Edge Computer Vision Platform for industrial safety, freight logistics, and academic integrity. 100% on-premise local inference at 500 DH / camera / month.
-        </p>
-        <div class="footer-sovereign-tag">
-          <i data-lucide="shield-check" class="highlight-green"></i>
-          <span>ISO/IEC 42001:2023 & Moroccan Law 09-08 Compliant</span>
-        </div>
-      </div>
-
-      <div class="footer-links-col">
-        <h4 class="footer-col-title" data-i18n="footer.solutionsTitle">Solutions</h4>
-        <ul>
-          <li><a href="#expertise" data-i18n="feat1.title">Industrial PPE Compliance</a></li>
-          <li><a href="#expertise" data-i18n="feat2.title">Logistics Gate Matriculation</a></li>
-          <li><a href="#expertise" data-i18n="feat3.title">Academic Exam Integrity</a></li>
-          <li><a href="#sovereign" data-i18n="feat4.title">Zero-Cloud Sovereign Edge</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-links-col">
-        <h4 class="footer-col-title" data-i18n="footer.navTitle">Governance & ROI</h4>
-        <ul>
-          <li><a href="#standards" data-i18n="nav.standards">ISO/IEC 42001 Standards</a></li>
-          <li><a href="#calculator" data-i18n="nav.calculator">Pricing & ROI Estimator</a></li>
-          <li><a href="#simulator" data-i18n="nav.simulator">Live Camera Feeds</a></li>
-          <li><a href="#solutions" data-i18n="int.title">Architecture & Specs</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact-col">
-        <h4 class="footer-col-title" data-i18n="footer.contactTitle">Enterprise Inquiries</h4>
-        <p><strong>EyeSafe AI Technologies</strong></p>
-        <p><a href="tel:+212666774426">+212 666-774426</a></p>
-        <p><a href="mailto:contact@eyesafe.ai">contact@eyesafe.ai</a></p>
-        <p>Casablanca / Benguerir, Morocco</p>
-      </div>
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#top" aria-label="EyeSafe home"><svg class="brand-mark" viewBox="0 0 42 24" aria-hidden="true"><path d="M2 12C6.8 4.8 13 1.2 21 1.2S35.2 4.8 40 12c-4.8 7.2-11 10.8-19 10.8S6.8 19.2 2 12Z"/><circle cx="21" cy="12" r="5.2"/></svg><span>EyeSafe</span></a>
+      <p data-en="Sovereign visual intelligence for critical environments." data-fr="Intelligence visuelle souveraine pour les environnements critiques.">Sovereign visual intelligence for critical environments.</p>
+      <div class="footer-links"><a href="#expertise" data-en="Platform" data-fr="Plateforme">Platform</a><a href="#applications" data-en="Applications" data-fr="Applications">Applications</a><a href="#architecture" data-en="Architecture" data-fr="Architecture">Architecture</a><a href="mailto:contact@eyesafe.ai">Email</a><a href="https://wa.me/212666774426" target="_blank" rel="noopener">WhatsApp</a></div>
     </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-container">
-        <p>© 2026 EyeSafe Computer Vision. All rights reserved.</p>
-        <p class="footer-badge">ISO/IEC 42001:2023 Aligned • 100% Sovereign AI</p>
-      </div>
-    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> EyeSafe</span><span data-en="Designed and engineered in Morocco" data-fr="Conçu et développé au Maroc">Designed and engineered in Morocco</span></div>
   </footer>
-
-  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
 </html>
