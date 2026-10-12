@@ -196,21 +196,21 @@ EyeSafe operates on a flat rate: **500 DH / camera / month**.
 
 ## Static Web Application
 
-This repository contains the complete static frontend landing page ready for deployment to GitHub Pages:
+The complete static frontend is stored in `docs/`, the publishing directory configured for GitHub Pages:
 
-- **`index.html`**: Semantic landing page with dual-scenario video player, live multi-camera simulator, ISO/IEC 42001 section, ROI estimator (500 DH/cam/mo), and contact forms.
-- **`styles.css`**: Dark luxury HUD design system with glassmorphism, animated scanning lines, and mobile responsive layouts.
-- **`app.js`**: Client-side reactive engine featuring interactive camera feed switching, video synchronization, full French/English (FR / EN) bilingual switching, and cost calculation.
-- **`assets/`**: Pre-configured video clips demonstrating PPE compliance vs. violation detection, along with ANPR gate and examination surveillance imagery.
+- **`docs/index.html`**: Semantic enterprise landing page presenting the platform, applications, private architecture, deployment approach, and contact path.
+- **`docs/styles.css`**: Responsive editorial design system with cinematic media, accessible navigation, and restrained motion.
+- **`docs/app.js`**: Lightweight interactions for bilingual English/French content, navigation, video playback, and reveal transitions.
+- **`docs/assets/`**: Product demonstration videos and application imagery.
 
 ### Local Development / Preview
 
 ```bash
 # Option 1: Using Python 3 HTTP server
-python3 -m http.server 8080
+python3 -m http.server 8080 --directory docs
 
 # Option 2: Using Node.js serve
-npx -y serve .
+npx -y serve docs
 
 # Open in browser: http://localhost:8080
 ```
@@ -222,11 +222,11 @@ npx -y serve .
 1. Commit and push changes:
    ```bash
    git add .
-   git commit -m "docs: clean readme without emojis or em dashes, updated mermaid graphs"
+   git commit -m "feat: update website"
    git push origin main
    ```
 2. In your repository on GitHub, navigate to **Settings** -> **Pages**.
-3. Under **Branch**, select `main` and root folder `/`, then click **Save**.
+3. Under **Branch**, select `main` and the `/docs` folder, then click **Save**.
 
 ---
 
