@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-labelledby="title description">
+  <title id="title">EyeSafe logo</title>
+  <desc id="description">Eye-shaped symbol with a lime iris followed by the EyeSafe wordmark.</desc>
+  <g fill="none" stroke="#0B0D0C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 60C35 32 58 18 88 18s53 14 70 42c-17 28-40 42-70 42S35 88 18 60Z"/>
+  </g>
+  <circle cx="88" cy="60" r="18" fill="#C8F04B"/>
+  <circle cx="88" cy="60" r="7" fill="#0B0D0C"/>
+  <text x="184" y="76" fill="#0B0D0C" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="58" font-weight="500" letter-spacing="-2.5">EyeSafe</text>
+</svg>

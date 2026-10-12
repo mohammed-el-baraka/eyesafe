@@ -233,7 +233,7 @@ npx -y serve docs
 ## Enterprise Inquiries
 
 - **Phone / WhatsApp:** +212 666-774426
-- **Email:** contact@eyesafe.ai
+- **Email:** mohammed.elbaraka@emines.um6p.ma
 - **Location:** Casablanca / Benguerir, Morocco
 
 ---
